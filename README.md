@@ -11,9 +11,9 @@ ESP Label | Funktion | Nutzung | Kabelfarbe (bei mir) | MH-Z19B | LEDs
 G | Ground | Ground für MH-Z19B und alle LEDs | schwarz | GND | Kathoden
 D5 | GPIO 14 | TX für MH-Z19 | gelb | TX | -
 D7 | GPIO 13 | RX für MH-Z19 | grün | RX | -
-D3 | GPIO 0 | LED rot | rot | - | Vorwiderstand - LED rot
-D4 | GPIO 2 | LED gelb | gelb | - | Vorwiderstand - LED gelb
-D6 | GPIO 12 | LED grün | grün | - | Vorwiderstand - LED grün
+D6 | GPIO 12 | LED rot | rot | - | Vorwiderstand - LED rot
+D2 | GPIO 4 | LED gelb | gelb | - | Vorwiderstand - LED gelb
+D1 | GPIO 5 | LED grün | grün | - | Vorwiderstand - LED grün
 
 ## Gehäuseaufbau
 
