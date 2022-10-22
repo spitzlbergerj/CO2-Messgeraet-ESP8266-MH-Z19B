@@ -9,13 +9,23 @@ Label | Funktion | Nutzung
 ----- | ----- | -----
 5V | Spannung 5V | Stromversorgung MH-Z19B
 G | Ground | Ground für MH-Z19B und alle LEDs (Kathode)
-D5 | GPIO-14 | TX für MH-Z19
-D7 | GPIO-13 | RX für MH-Z19
- | | LED rot
- | | LED gelb
-  | | LED grün
+D5 | GPIO 14 | TX für MH-Z19
+D7 | GPIO 13 | RX für MH-Z19
+D3 | GPIO 0 | LED rot
+D4 | GPIO 2 | LED gelb
+D6 | GPIO 12 | LED grün
 
 ## Gehäuseaufbau
+
+## ESPeasy
+
+### Device
+
+![ESPeasy Controllers](https://raw.githubusercontent.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/main/img/github-CO2-Sensor-ESPeasy-Controllers.png)
+
+### Controllers
+
+### Rules
 
 
 # MH-Z19B
@@ -33,7 +43,7 @@ Label | GPIO | Input | Output | Notes
 ----- | ----- | ----- | ----- | ----- 
 D0 | GPIO16 | no interrupt | no PWM or I2C support | HIGH at boot; used to wake up from deep sleep
 D1 | GPIO5 | OK | OK | often used as SCL (I2C)
-D2 | GPIO4 | OK | OK | often | usedas SDA (I2C)
+D2 | GPIO4 | OK | OK | often used as SDA (I2C)
 D3	| GPIO0	| pulled up	| OK	| connected to FLASH button, boot fails if pulled LOW
 D4	| GPIO2	| pulled up	| OK	| HIGH at boot; connected to on-board LED, boot fails if pulled LOW
 D5	| GPIO14	| OK	| OK	| SPI (SCLK)
