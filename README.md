@@ -37,6 +37,7 @@ Controller Publish: egal.exe?ret=dom.GetObject(%27ESP8266-CO2-mobil%27).State(%v
 
 <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-ESPeasy-Rules.png"  width="400">
 
+```
 // Beim Booten
 
 On System#Boot do   
@@ -77,7 +78,7 @@ else
    endif
 endif
 endon
-
+```
 
 # MH-Z19B
 
