@@ -3,6 +3,13 @@ This repository serves as a collection of files and links for building an indoor
 
 # CO2 - Sensor für den Innenbereich
 
+## Komponenten
+
+- ESP8266 D1 mini
+- MH-Z19B
+- LED 3mm
+- ESPEasy
+
 ## ESP8266 - genutzte Pins
 
 ESP Label | Funktion | Nutzung | Kabelfarbe (bei mir) | MH-Z19B | LEDs
@@ -129,6 +136,7 @@ A0	| ADC0	| Analog | Input	| X
 
 # Quellen
 
+https://www.letscontrolit.com/wiki/index.php/ESPEasy
 https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
 https://www.verdrahtet.info/2021/02/27/co2-sensor-fuer-homematic-und-iobroker-im-eigenbau/
 
