@@ -19,6 +19,10 @@ D1 | GPIO 5 | LED grün | grün | - | Vorwiderstand - LED grün
 
 ## ESPeasy
 
+### Hardware
+
+<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-ESPeasy-Hardware.png"  width="400">
+
 ### Device
 
 <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-ESPeasy-Devices.png"  width="400">
