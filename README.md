@@ -128,3 +128,5 @@ A0	| ADC0	| Analog | Input	| X
 # Quellen
 
 https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
+https://www.verdrahtet.info/2021/02/27/co2-sensor-fuer-homematic-und-iobroker-im-eigenbau/
+
