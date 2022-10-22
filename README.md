@@ -25,7 +25,11 @@ D6 | GPIO 12 | LED grün | grün | - | Vorwiderstand - LED grün
 
 ### Controllers
 
+Ich sende die Werte an meine Homematic:
+
 <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-ESPeasy-Controllers.png"  width="400">
+
+Controller Publish: egal.exe?ret=dom.GetObject(%27ESP8266-CO2-mobil%27).State(%val1%)
 
 ### Rules
 
