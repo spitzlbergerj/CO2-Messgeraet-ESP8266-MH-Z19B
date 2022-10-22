@@ -5,15 +5,15 @@ This repository serves as a collection of files and links for building an indoor
 
 ## ESP8266 - genutzte Pins
 
-Label | Funktion | Nutzung
------ | ----- | -----
-5V | Spannung 5V | Stromversorgung MH-Z19B
-G | Ground | Ground für MH-Z19B und alle LEDs (Kathode)
-D5 | GPIO 14 | TX für MH-Z19
-D7 | GPIO 13 | RX für MH-Z19
-D3 | GPIO 0 | LED rot
-D4 | GPIO 2 | LED gelb
-D6 | GPIO 12 | LED grün
+ESP Label | Funktion | Nutzung | Kabelfarbe (bei mir) | MH-Z19B | LEDs
+----- | -------- | ------- | -------------------- | -------| ---
+5V | Spannung 5V | Stromversorgung MH-Z19B | rot | Vin | -
+G | Ground | Ground für MH-Z19B und alle LEDs | schwarz | GND | Kathoden
+D5 | GPIO 14 | TX für MH-Z19 | gelb | TX | -
+D7 | GPIO 13 | RX für MH-Z19 | grün | RX | -
+D3 | GPIO 0 | LED rot | rot | - | Vorwiderstand - LED rot
+D4 | GPIO 2 | LED gelb | gelb | - | Vorwiderstand - LED gelb
+D6 | GPIO 12 | LED grün | grün | - | Vorwiderstand - LED grün
 
 ## Gehäuseaufbau
 
@@ -21,9 +21,11 @@ D6 | GPIO 12 | LED grün
 
 ### Device
 
-![ESPeasy Controllers](https://raw.githubusercontent.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/main/img/github-CO2-Sensor-ESPeasy-Controllers.png)
+<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-ESPeasy-Devices.png"  width="400">
 
 ### Controllers
+
+<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-ESPeasy-Controllers.png"  width="400">
 
 ### Rules
 
