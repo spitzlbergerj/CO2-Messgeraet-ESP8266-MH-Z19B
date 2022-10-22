@@ -31,7 +31,52 @@ Ich sende die Werte an meine Homematic:
 
 Controller Publish: egal.exe?ret=dom.GetObject(%27ESP8266-CO2-mobil%27).State(%val1%)
 
+<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Homematic_Systemvariable.png"  width="400">
+
 ### Rules
+
+<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-ESPeasy-Rules.png"  width="400">
+
+// Beim Booten
+
+On System#Boot do   
+   gpio,5,0          // LEDs aus
+   gpio,4,0
+   gpio,12,0
+   gpio,5,1          // LEDs einzeln blinken
+   gpio,5,0
+   gpio,4,1
+   gpio,4,0
+   gpio,12,1
+   gpio,12,0
+   gpio,5,1          // LEDs ein
+   gpio,4,1
+   gpio,12,1
+endon
+
+
+// LEDs werteabhängig schalten
+// D1, GPIO5 = grün
+// D2, GPIO4 = gelb
+// D6, GPIO12 = rot
+
+On CO2_Sensor_mobil#PPM do
+if [CO2_Sensor_mobil#PPM] <= 800
+   gpio,5,1          
+   gpio,4,0
+   gpio,12,0
+else
+   if [CO2_Sensor_mobil#PPM] > 800 and [CO2_Sensor_mobil#PPM] <= 1400 
+      gpio,5,0          
+      gpio,4,1
+      gpio,12,0
+   else
+      gpio,5,0          
+      gpio,4,0
+      gpio,12,1
+   endif
+endif
+endon
 
 
 # MH-Z19B
