@@ -1,5 +1,6 @@
-Dieses Repository dient als Sammlung von Dateien und Links für den Bau eines CO2 Sensors für den Innenbereich auf Basis von ESP8266, ESPEasy, MH-Z19B, LEDs. Enthalten ist ebenfalls ein Gehäuse als 3D Druck.
-This repository serves as a collection of files and links for building an indoor CO2 sensor based on ESP8266, ESPEasy, MH-Z19B, LEDs. Also included is a housing as 3D print.
+Dieses Repository dient als Sammlung für Dateien, Links und Anleitungen für den Bau eines CO2 Sensors für den Innenbereich auf Basis von ESP8266, ESPEasy, MH-Z19B, LEDs. Enthalten sind ebenfalls die stl-Dateien ein Gehäuse als 3D Druck.
+
+This repository serves as a collection of files, links and documentation for building an indoor CO2 sensor based on ESP8266, ESPEasy, MH-Z19B, LEDs. Also included is a housing as 3D print.
 
 # CO2 - Sensor für den Innenbereich
 
@@ -26,21 +27,16 @@ D1 | GPIO 5 | LED grün | grün | - | Vorwiderstand - LED grün
 
 siehe https://www.thingiverse.com/thing:5580123
 
-<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-geschlossen-LED.png"  width="200">
+<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-geschlossen-LED.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-geschlossen.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-Unterteil.png"  width="200"> |  <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-Deckel.png"  width="200">
 
-<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-geschlossen.png"  width="200">
-
-<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-Unterteil.png"  width="200">
-
-<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-Deckel.png"  width="200">
-
-<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real1.png"  width="200">
-
-<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real2.png"  width="200">
-
-<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real3.png"  width="200">
+<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real1.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real2.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real3.png"  width="200"> | 
 
 ## ESPeasy
+
+[ESPEasy](https://www.letscontrolit.com/wiki/index.php/ESPEasy) bringt schon einen Flasher für Windows mit. Damit sollte das Flashen des ESP8266 bzw Wemos D1 mini mit einem USB Kabel am Windows Rechner kein Problem mehr sein. Allerdings kommt es wohl auf das USB Kabel an. Ich habe bestimmt 5 oder 6 Kabel durchprobiert, bis ich eines gefunden habe, mit dem es zuverlässig geht. Natürlich kann auch ein USB TTL Adapter verwendet werden.
+
+Bei diesem Flasher kann insbesondere auch schon das WLAN eingetragen werden. Hier bitte den Hacken bei Post Flash Aufgaben nicht vergessen
+
 
 ### Hardware
 
