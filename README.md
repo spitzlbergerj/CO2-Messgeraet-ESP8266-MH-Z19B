@@ -13,6 +13,8 @@ This repository serves as a collection of files, links and documentation for bui
 
 ## ESP8266 - genutzte Pins
 
+Ich habe für meinen Aufbau folgnede Pins genutzt:
+
 ESP Label | Funktion | Nutzung | Kabelfarbe (bei mir) | MH-Z19B | LEDs
 ----- | -------- | ------- | -------------------- | -------| ---
 5V | Spannung 5V | Stromversorgung MH-Z19B | rot | Vin | -
@@ -31,12 +33,13 @@ siehe https://www.thingiverse.com/thing:5580123
 
 <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real1.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real2.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real3.png"  width="200"> | 
 
-## ESPeasy
+## ESPEasy
 
 [ESPEasy](https://www.letscontrolit.com/wiki/index.php/ESPEasy) bringt schon einen Flasher für Windows mit. Damit sollte das Flashen des ESP8266 bzw Wemos D1 mini mit einem USB Kabel am Windows Rechner kein Problem mehr sein. Allerdings kommt es wohl auf das USB Kabel an. Ich habe bestimmt 5 oder 6 Kabel durchprobiert, bis ich eines gefunden habe, mit dem es zuverlässig geht. Natürlich kann auch ein USB TTL Adapter verwendet werden.
 
 Bei diesem Flasher kann insbesondere auch schon das WLAN eingetragen werden. Hier bitte den Hacken bei Post Flash Aufgaben nicht vergessen
 
+<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/Flasher-Konfiguration zum Flashen.png"  width="400">
 
 ### Hardware
 
