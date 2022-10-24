@@ -25,6 +25,8 @@ D6 | GPIO 12 | LED rot | rot | - | Vorwiderstand - LED rot
 D2 | GPIO 4 | LED gelb | gelb | - | Vorwiderstand - LED gelb
 D1 | GPIO 5 | LED grün | grün | - | Vorwiderstand - LED grün
 
+ich habe mich hierzu von diesem [Artikel](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/) inspirieren lassen.
+
 ## Gehäuseaufbau
 
 siehe https://www.thingiverse.com/thing:5580123
@@ -41,11 +43,17 @@ Bei diesem Flasher kann insbesondere auch schon das WLAN eingetragen werden. Hie
 
 <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/Flasher-Konfiguration zum Flashen.png"  width="400">
 
+Anschließend sind nachfolgende Konfigurationen innerhalb von ESPEasy durchzuführen:
+
 ### Hardware
+
+Konfiguration der Pin Verwendung:
 
 <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-ESPeasy-Hardware.png"  width="400">
 
 ### Device
+
+Eintragen des MH-Z19B als Sensor
 
 <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-ESPeasy-Devices.png"  width="400">
 
@@ -55,11 +63,20 @@ Ich sende die Werte an meine Homematic:
 
 <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-ESPeasy-Controllers.png"  width="400">
 
-Controller Publish: egal.exe?ret=dom.GetObject(%27ESP8266-CO2-mobil%27).State(%val1%)
+Im Controller Publisch steht bei mir:
+```
+egal.exe?ret=dom.GetObject(%27ESP8266-CO2-mobil%27).State(%val1%)
+```
+
+```egel.exe``` spielt dabei keine Rolle und kann beliebig benannt werden, solange ein ```.exe``` vorkommt.
+
+Auf der Homematic habe ich folgende Systemvariable eingerichtet, die dann wiederum über node-red in eine MariaDB eingetragen und über Grafana ausgewertet werden.
 
 <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Homematic_Systemvariable.png"  width="400">
 
 ### Rules
+
+Zur Steuerung der LEDs auf dem D1 mini verwende ich diese Rules
 
 <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-ESPeasy-Rules.png"  width="400">
 
@@ -106,7 +123,40 @@ endif
 endon
 ```
 
+Die LEDs binken also beim Booten einmal auf, um dann dauerhaft zu dritt zu leuchten. Sobald das erste Mal der Wert PPM ausgelesen wird, wechselt die LED Farbe auf den entsprechenden Wert und nur eine LED leuchtet dann.
+
 # MH-Z19B
+
+Bitte hier darauf achten, keine Fake Sensor zu erwerben. Bei den Z19B muss die Platine wohl grün sein und das Gehäuse oben einen Hügel aufweisen. Die Einlass- und Auslass Fenster haben einen Rahmen.
+
+Das Gehäuse habe ich auf den MH-Z19B ausgelegt. Natürlich funktionieren aber auch die neueren Versionen MH-Z19C und MH-Z19E. Einen Vergleich der Sensoren habe ich irgendwo gefunden (aber leider nicht emhr parat). Der MH-Z19E benötigt wohl insbesondere weniger Strom.
+
+## Kalibrierung
+
+Der MH-Z19 verfügt über eine Auto Kalibrierungsfunktion, die den niedrigsten PPM Wert in 24 Stunden auf 400 ppm festsetzt. Diese Funktion ist in stets gut gelüfteten Innenräumen eine gute Option. Will man die PPM Rate stets konstant messen, muss diese Autokalibrierung abgeschaltet werden. Dazu bietet ESPEasy eine eigene Option, mit der das schnell erledigt werden kann. In den Datenblättern vom MH-Z19 finden sich weitere Möglichkeiten des Abschlatens. Ich habe dazu viele Foreneinträge gefunden. 
+
+Der Entwickler des Sensor AddIns von ESPEasy rät davon allerdings ab und empfiehlt eine andere Methode. Diese habe ich dann auch verwendet:
+
+>*If the ABC is way off, you should follow the steps I mentioned before:*
+>
+>*- Use indoor in a well ventilated room*
+>
+>*- Avoid direct sun light on the sensor (is IR light too)*
+>
+>*- Leave it running for several days (each 24h it will adjust its ABC based on the lowest value seen)*
+>
+>*- Try to keep humidity levels as constant as possible, so don't place in or near a bathroom.*
+>
+>*Things you should avoid:*
+>
+>*- Power cycle the sensor frequently. It will mess up the ABC.*
+> 
+>*- Never try to switch range or perform calibrations yourself. For example forcing 400 ppm or 0 ppm levels will probably destroy the calibration table and you cannot get it right yourself*
+> 
+>*The sensor should also work on 3.3V, but I've seen it does take longer to perform a reading and I can't tell what it will do to the aging of the components inside. (or if components age differently, ruining the accuracy)*
+
+>Quelle: https://www.letscontrolit.com/forum/viewtopic.php?t=6532
+
 
 # ESP8266
 
@@ -138,4 +188,5 @@ A0	| ADC0	| Analog | Input	| X
 https://www.letscontrolit.com/wiki/index.php/ESPEasy
 https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
 https://www.verdrahtet.info/2021/02/27/co2-sensor-fuer-homematic-und-iobroker-im-eigenbau/
+https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
 
