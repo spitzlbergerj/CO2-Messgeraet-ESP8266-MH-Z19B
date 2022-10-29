@@ -7,9 +7,38 @@ This repository serves as a collection of files, links and documentation for bui
 ## Komponenten
 
 - ESP8266 D1 mini
-- MH-Z19B
-- LED 3mm
 - ESPEasy
+- MH-Z19B
+- LED 3mm (optional)
+
+# ESP8266
+
+## D1 mini - Layout
+
+![ESP8266 D1 Mini](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP8266-WeMos-D1-Mini-pinout-gpio-pin.png?w=715&quality=100&strip=all&ssl=1)
+
+## GPIO Pins, welche wofür nutzbar
+
+Label | GPIO | Input | Output | Notes
+----- | ----- | ----- | ----- | ----- 
+D0 | GPIO16 | no interrupt | no PWM or I2C support | HIGH at boot; used to wake up from deep sleep
+D1 | GPIO5 | OK | OK | often used as SCL (I2C)
+D2 | GPIO4 | OK | OK | often used as SDA (I2C)
+D3	| GPIO0	| pulled up	| OK	| connected to FLASH button, boot fails if pulled LOW
+D4	| GPIO2	| pulled up	| OK	| HIGH at boot; connected to on-board LED, boot fails if pulled LOW
+D5	| GPIO14	| OK	| OK	| SPI (SCLK)
+D6	| GPIO12	| OK	| OK	| SPI (MISO)
+D7	| GPIO13	| OK	| OK	| SPI (MOSI)
+D8	| GPIO15	| pulled to GND	| OK	| SPI (CS); Boot fails if pulled HIGH
+RX	| GPIO3	| OK	| RX pin	| HIGH at boot
+TX	| GPIO1	| TX pin	| OK	| HIGH at boot; debug output at boot, boot fails if pulled LOW
+A0	| ADC0	| Analog | Input	| X	
+
+## Flashen des ESP8266
+
+Auf den meisten ESP82 Derivaten ist ein USB-Serial Chip (z.B. CP2102 oder CP2104) verbaut. Windows 10 und Windows 11 bringen in der Regel die notwendigen Treiber schon mit. Falls der ESP8266 am USB Port vom Flasher nicht erkannt wird, müssen die Treiber (z.B. von [Silicon Labs](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) manuell installiert werden. 
+
+ESPEasy bringt einen eigene Flasher für Windows mit. Hier ist lediglich das richtige Image auszuwählen. Die Dateinamen der Images enthalten am Schluss eine Angabe zur ESP Speichergröße, für die dieses Image erstellt wurde. Hierauf bitte achten und das richtige Image auswählen.
 
 ## ESP8266 - genutzte Pins
 
@@ -27,15 +56,8 @@ D1 | GPIO 5 | LED grün | grün | - | Vorwiderstand - LED grün
 
 ich habe mich hierzu von diesem [Artikel](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/) inspirieren lassen.
 
-## Gehäuseaufbau
 
-siehe https://www.thingiverse.com/thing:5580123
-
-<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-geschlossen-LED.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-geschlossen.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-Unterteil.png"  width="200"> |  <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-Deckel.png"  width="200">
-
-<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real1.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real2.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real3.png"  width="200"> | 
-
-## ESPEasy
+# ESPEasy
 
 [ESPEasy](https://www.letscontrolit.com/wiki/index.php/ESPEasy) bringt schon einen Flasher für Windows mit. Damit sollte das Flashen des ESP8266 bzw Wemos D1 mini mit einem USB Kabel am Windows Rechner kein Problem mehr sein. Allerdings kommt es wohl auf das USB Kabel an. Ich habe bestimmt 5 oder 6 Kabel durchprobiert, bis ich eines gefunden habe, mit dem es zuverlässig geht. Natürlich kann auch ein USB TTL Adapter verwendet werden.
 
@@ -157,31 +179,13 @@ Der Entwickler des Sensor AddIns von ESPEasy rät davon allerdings ab und empfie
 
 >Quelle: https://www.letscontrolit.com/forum/viewtopic.php?t=6532
 
+# Gehäuseaufbau
 
-# ESP8266
+siehe https://www.thingiverse.com/thing:5580123
 
-## D1 mini - Layout
+<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-geschlossen-LED.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-geschlossen.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-Unterteil.png"  width="200"> |  <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-Deckel.png"  width="200">
 
-![ESP8266 D1 Mini](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP8266-WeMos-D1-Mini-pinout-gpio-pin.png?w=715&quality=100&strip=all&ssl=1)
-
-## GPIO Pins, wwelche wofür nutzen
-
-
-Label | GPIO | Input | Output | Notes
------ | ----- | ----- | ----- | ----- 
-D0 | GPIO16 | no interrupt | no PWM or I2C support | HIGH at boot; used to wake up from deep sleep
-D1 | GPIO5 | OK | OK | often used as SCL (I2C)
-D2 | GPIO4 | OK | OK | often used as SDA (I2C)
-D3	| GPIO0	| pulled up	| OK	| connected to FLASH button, boot fails if pulled LOW
-D4	| GPIO2	| pulled up	| OK	| HIGH at boot; connected to on-board LED, boot fails if pulled LOW
-D5	| GPIO14	| OK	| OK	| SPI (SCLK)
-D6	| GPIO12	| OK	| OK	| SPI (MISO)
-D7	| GPIO13	| OK	| OK	| SPI (MOSI)
-D8	| GPIO15	| pulled to GND	| OK	| SPI (CS); Boot fails if pulled HIGH
-RX	| GPIO3	| OK	| RX pin	| HIGH at boot
-TX	| GPIO1	| TX pin	| OK	| HIGH at boot; debug output at boot, boot fails if pulled LOW
-A0	| ADC0	| Analog | Input	| X	
-
+<img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real1.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real2.png"  width="200"> | <img src="https://github.com/spitzlbergerj/CO2-Messgeraet-ESP8266-MH-Z19B/blob/main/img/github-CO2-Sensor-Gehäuse-real3.png"  width="200"> | 
 
 # Quellen
 
